@@ -14,7 +14,7 @@ class Transaction < ActiveRecord::Base
 
 	def credit_card
 			ActiveMerchant::Billing::CreditCard.new(
-										:first_name         => first_name,
+						:first_name         => first_name,
 		                :last_name          => last_name,
 		                :number             => number,
 		                :month              => month,
@@ -26,7 +26,7 @@ class Transaction < ActiveRecord::Base
 		@price = amount*100
 		response = TransactionGateway.get.purchase(@price, credit_card)
 		if response.success?
-			user.spendings << @price.spendings
+			
 			return true
 		else
 			errors.add(:base, "Transaction rejected : #{response.message}")

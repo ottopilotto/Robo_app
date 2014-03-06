@@ -2,7 +2,8 @@ require 'open-uri'
 class Robot 
 
 
-	@@url = 'http://192.168.0.44:1234/'
+	# @@url = 'http://192.168.0.44:1237/'
+	@@url = 'http://127.0.0.1:4567/'
 	@@api_key = '4'
 
 	def self.run_command(cmd)
