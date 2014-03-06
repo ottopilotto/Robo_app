@@ -1,0 +1,31 @@
+<header>
+	<h1>Robo App</h1>
+</header>
+
+<div class='main_image'>
+	<%=image_tag 'robot.png'%>
+</div>
+<div class='buttons main_buttons'>
+	<div class='button left'><%= robot_control_button "Left", "left" %></div>
+	<div class='button forward'><%= robot_control_button "Forward", "forward" %></div>
+	<div class='button backward'><%= robot_control_button "Backward", "backward" %></div>
+	<div class='button right'> <%= robot_control_button "Right", "right" %></div>
+</div>
+<div class='buttons secondary_buttons'>
+	<div class='button slow_back'><%= robot_control_button "Slow Backward", "slow_backward" %></div>
+	<div class='button slow_forw'><%= robot_control_button "Slow Forward", "slow_forward" %></div>
+</div>
+<div class='buttons third_buttons'>
+	<div class='button run'><%= robot_control_button "Run", "run" %></div>
+	<div class='button attack'><%= robot_control_button "Attack", "attack" %></div>
+</div>
+<div class="command_form">
+<p><%= form_tag(robot_path, method: :put) do %>
+  <%= text_area_tag :cmd, params[:cmd] %>
+  <%= submit_tag("Send") %>
+<% end %></p>
+
+<div class='proximity'>
+	Proximity:<%=@proximity%>
+</div>
+

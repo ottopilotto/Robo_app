@@ -1,0 +1,9 @@
+<%= button_to 'Right', {:controller => "robots", :action => "update", :cmd => "right"}, method: :put%>
+<%= button_to 'Left', robot_path, method: :put%>
+<%= button_to 'Forward', robot_path, method: :put%>
+<%= button_to 'Backward', robot_path, method: :put%>
+<%= button_to 'Slow Backward', robot_path, method: :put%>
+<%= button_to 'Slow Forward', robot_path, method: :put%>
+<%= button_to 'Run', robot_path, method: :put %>
+<%= button_to 'Attack', robot_path, method: :put%>
+<%= button_to 'Proximity', robot_path, method: :put%>

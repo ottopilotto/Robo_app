@@ -1,0 +1,52 @@
+header {
+	text-align: center;
+	font-family: 'Iceland', cursive;
+	font-size: 2em;
+}
+
+.right {
+	text-align: right;
+}
+
+.main_image {
+	text-align: center;
+	margin-top: -50px;
+
+}
+
+form.button_to {
+	font-family: 'Iceland', cursive;
+}
+
+.buttons {
+	width: 400px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	font-size: 1.45em;
+}
+
+.button {
+	display: inline-block;
+}
+.button + .button {
+	margin-left: 21px;
+}
+
+.slow_forw {
+	float: right;
+}
+
+.attack {
+	float: right;
+}
+
+.command_form {
+	clear: both;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+.error {
+	text-align: center;
+}
