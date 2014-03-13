@@ -26,8 +26,8 @@ class Transaction < ActiveRecord::Base
 		@price = amount*100
 		response = TransactionGateway.get.purchase(@price, credit_card)
 		if response.success?
-			
-			return true
+		UserMailer.transaction_mail(self.user.email).deliver
+		return true
 		else
 			errors.add(:base, "Transaction rejected : #{response.message}")
 			return false
