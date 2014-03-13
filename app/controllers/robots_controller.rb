@@ -17,7 +17,6 @@ end
 
 def show 
   @proximity = Robot.proximity 
-  
 end
 # def lock
 #   Robot.lock

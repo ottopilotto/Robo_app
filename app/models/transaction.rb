@@ -3,7 +3,7 @@ class Transaction < ActiveRecord::Base
 	validates :amount, presence: true, numericality: true
 	validates :first_name, :last_name, :number, :month, :year, :verification_value, presence: true
 	validate :credit_card_valid
-	belongs_to :user
+	belongs_to :user, counter_cache: true
 	has_many :spendings
 
 	before_create :purchase
