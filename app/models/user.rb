@@ -5,7 +5,20 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :transactions
   has_many :spendings
+
+
+  def payment
+    self.credits -= 1 
+    save
+  end
+
+  def has_credits?
+    self.credits > 0
+  end
 end
+
+
+
 
 
 

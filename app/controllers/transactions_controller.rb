@@ -8,7 +8,10 @@ class TransactionsController < ApplicationController
 
 	def create
 		@transaction = current_user.transactions.build(transaction_params)
+		@transaction.credits = @transaction.amount
+		current_user.credits += @transaction.credits
 		if current_user.save
+			# current_user.credits += @transaction.credits
 			redirect_to root_path
 		else
 			flash[:notice] = "Please fill in all fields"

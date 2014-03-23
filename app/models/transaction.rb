@@ -14,7 +14,7 @@ class Transaction < ActiveRecord::Base
 
 	def credit_card
 			ActiveMerchant::Billing::CreditCard.new(
-						:first_name         => first_name,
+										:first_name         => first_name,
 		                :last_name          => last_name,
 		                :number             => number,
 		                :month              => month,
@@ -32,5 +32,6 @@ class Transaction < ActiveRecord::Base
 			errors.add(:base, "Transaction rejected : #{response.message}")
 			return false
 		end
-	end
+
+end
 end

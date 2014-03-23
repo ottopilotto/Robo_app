@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313122040) do
+ActiveRecord::Schema.define(version: 20140323150612) do
 
   create_table "spendings", force: true do |t|
     t.integer "user_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140313122040) do
   create_table "transactions", force: true do |t|
     t.integer "user_id"
     t.decimal "amount"
+    t.integer "credits"
   end
 
   create_table "users", force: true do |t|
@@ -38,6 +39,9 @@ ActiveRecord::Schema.define(version: 20140313122040) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "transactions_count",     default: 0
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "credits",                default: 2
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

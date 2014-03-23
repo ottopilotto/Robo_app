@@ -2,8 +2,9 @@ require 'open-uri'
 class Robot 
 
 
-	@@url = 'http://192.168.0.44:1235/'
-	#@@url = 'http://127.0.0.1:4567/'
+	
+	# @@url = 'http://192.168.0.44:1235/'
+	@@url = 'http://127.0.0.1:4567/'
 	@@api_key = '4'
 
 	def self.run_command(cmd)
@@ -14,7 +15,7 @@ class Robot
 	end
 
 	def self.lock
-		open(@@url + @@api_key +'/lock').read 
+		open(@@url + @@api_key + '/lock').read 
 	end
 
 	def self.proximity
@@ -53,7 +54,4 @@ class Robot
 	def self.attack
 		open(@@url + @@api_key + '/attack').read
 	end
-
-
-
 end

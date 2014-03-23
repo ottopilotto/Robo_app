@@ -1,41 +1,51 @@
-<%= form_for @transaction do |f|%>
+<div id="form-main-window">
+	<div class="form-header">
+		<p>1 credit = 1 USD</p>
+		<p>1 credit = super duper fun with amazing Robo for 60 seconds!!!!</p>
 
-<div class='field'>
-	<%= f.label :first_name %><br />
- 	<%= f.text_field :first_name %>
+	</div>
+
+
+	<%= form_for @transaction do |f|%>
+
+	<div class='field'>
+		<%= f.label :first_name %><br />
+	 	<%= f.text_field :first_name, value: current_user.first_name %>
+	</div>
+
+	<div class='field'>	
+		<%= f.label :last_name %><br />
+		<%= f.text_field :last_name, value: current_user.last_name%>
+	</div>
+
+	<div class='field'>
+		<%= f.label :amount %><br />
+		<%= f.text_field :amount %>
+	</div>
+
+	<div class='field'>
+		<%= f.label :number %><br />
+		<%= f.text_field :number%>
+	</div>
+
+	<div class='field'>
+		<%= f.label :month %><br />
+		<%= f.text_field :month%>
+	</div>
+
+	<div class='field'>
+		<%= f.label :year %><br />
+		<%= f.text_field :year %>
+	</div>
+
+	<div class='field'>
+		<%= f.label :verification_value %><br />
+		<%= f.text_field :verification_value %></br>
+	</div>
+
+	<div class="actions"><%= f.submit "Send" %></div>
+	<%end%>
+
 </div>
-
-<div class='field'>	
-	<%= f.label :last_name %><br />
-	<%= f.text_field :last_name %>
-</div>
-
-<div class='field'>
-	<%= f.label :amount %><br />
-	<%= f.text_field :amount %>
-</div>
-
-<div class='field'>
-	<%= f.label :number %><br />
-	<%= f.text_field :number%>
-</div>
-
-<div class='field'>
-	<%= f.label :month %><br />
-	<%= f.text_field :month%>
-</div>
-
-<div class='field'>
-	<%= f.label :year %><br />
-	<%= f.text_field :year %>
-</div>
-
-<div class='field'>
-	<%= f.label :verification_value %><br />
-	<%= f.text_field :verification_value %>
-</div>
-
-<div class="actions"><%= f.submit "Send" %></div>
-<%end%>
 
 
